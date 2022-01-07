@@ -36,14 +36,12 @@ namespace SeleniumTraining.StepDefs
         public void WhenFillUpTextboxFormAs(string fullName, string email, string currentAddress, string permanantAddress)
         {
             demoQA.FillUpTextBoxDemoForm(fullName, email, currentAddress, permanantAddress);
-            Thread.Sleep(100);
         }
 
         [Then(@"Verify Textbox Form values are '([^']*)', '([^']*)', '([^']*)', '([^']*)'")]
         public void ThenVerifyTextboxFormValuesAre(string fullName, string email, string currentAddress, string permanantAddress)
         {
-            Assert.True(demoQA.CheckTextBoxDemoFormDisplayedCorrectly(fullName, email, currentAddress, permanantAddress),
-                        "Text Box Details Are Saved Correctly");
+            demoQA.CheckTextBoxDemoFormDisplayedCorrectly(fullName, email, currentAddress, permanantAddress);
         }
 
         [When(@"Select Radio Button Value as '([^']*)'")]
@@ -55,8 +53,7 @@ namespace SeleniumTraining.StepDefs
         [Then(@"Verify Radio Button Value Displayed As '([^']*)'")]
         public void ThenVerifyRadioButtonValueDisplayedAs(string RBValue)
         {
-            Assert.True(demoQA.CheckRadioButtonValuesAreSavedCorrectly(RBValue),
-                        "Radio Button Values Are Saved Correctly");
+            demoQA.CheckRadioButtonValuesAreSavedCorrectly(RBValue);
         }
     }
 }
