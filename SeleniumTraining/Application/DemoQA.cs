@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace SeleniumTraining.Application
 {
+    // Page Object For Demo Application
     public class DemoQA
     {
         public WebDriver Driver { get; set; }
